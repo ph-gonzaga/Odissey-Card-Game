@@ -12,21 +12,93 @@ import java.util.Random;
 
 public class Game {
 
-	public static void main(String[] args) {
+	static Scanner scanner = new Scanner(System.in);
+	
+	public static void main(String[] args) throws InterruptedException {
 		
 		/*
 		 * ArrayList<Combatente> cartasDeckJogador1 = new ArrayList(); ArrayList<String>
 		 * cartasDeckJogador2 = new ArrayList<String>();
 		 */
 	
-		Scanner scanner = new Scanner(System.in);
+		Random rand = new Random();
 		
-		RainhaAmazonas rainha_amazonas = new RainhaAmazonas();
-		ArqueiraAmazonas arqueira_amazonas = new ArqueiraAmazonas();
+		System.out.println("Bem vindo(a) ao Odissey Game!");
+		
+		Thread.sleep(1000);
+		
+		System.out.println("Para começar, insira os nomes dos jogadores.");
+		System.out.println("Nome do Jogador 1: ");
+		String nome_jogador1 = scanner.nextLine();
+		
+		System.out.println("Nome do Jogador 2: ");
+		String nome_jogador2 = scanner.nextLine();
+		
+		System.out.println("Sejam bem-vindos, " + nome_jogador1 + " e " + nome_jogador2 + ", agora vamos realizar um sorteio para ver quem começa escolhendo o deck!");
+		Thread.sleep(1000);
+		
+		// Jogando os dados
+		System.out.println(nome_jogador1 + ", jogue o dado e boa sorte!");
+		
+		int dado_jogador1 = jogarDado(1, 6);
+		System.out.println("**jogando o dado**");
+	
+		Thread.sleep(2000);
+		
+		System.out.println("E caiu o número " + dado_jogador1 + ".");
+		
+		Thread.sleep(1500);
+		
+		System.out.println(nome_jogador2 + ", agora é a sua vez, boa sorte!");
+		
+		Thread.sleep(1500);
+		
+		int dado_jogador2 = jogarDado(1, 6);
+		System.out.println("**jogando o dado**");
+		
+		Thread.sleep(1500);
+		System.out.println("E caiu o número " + dado_jogador2 + ".");
+		
+		while(dado_jogador1 == dado_jogador2) {
+			System.out.println("Os números caíram iguais. " + nome_jogador1 + ", jogue novamente!");
+			dado_jogador1 = jogarDado(1, 6);
+			System.out.println("**jogando o dado**");
+			
+			Thread.sleep(1500);
+			System.out.println("E caiu o número " + dado_jogador1 + ".");
+			
+			dado_jogador2 = jogarDado(1, 6);
+			System.out.println("**jogando o dado**");
+			
+			Thread.sleep(1500);
+			System.out.println("E caiu o número " + dado_jogador2 + ".");
+		}
+		
+		// declara vencedor dos dados
+		String primeiro_jogador;
+		String segundo_jogador;
+		if(dado_jogador1 > dado_jogador2) {
+			primeiro_jogador = nome_jogador1;
+			segundo_jogador = nome_jogador2;
+		} else {
+			primeiro_jogador = nome_jogador2;
+			segundo_jogador = nome_jogador1;
+		}
+//		
+		Thread.sleep(1500);
+		System.out.println(primeiro_jogador + ", parabéns, vc ganhou. Comece escolhendo o deck.");
+//		
+		// Escolhendo o deck
+		String[] deck = gerarDeck();
+		
+		escolherDeck(primeiro_jogador, deck);
+		
+		
 
-		System.out.println("Bem vindo(a) ao Odissey Game");
-		
-		System.out.println(rainha_amazonas.getNome());
+//		RainhaAmazonas rainha_amazonas = new RainhaAmazonas();
+//		ArqueiraAmazonas arqueira_amazonas = new ArqueiraAmazonas();
+//		
+//		System.out.println(rainha_amazonas.getNome());
 		/*
 		 * System.out.println(rainha_amazonas.getVida());
 		 * System.out.println(rainha_amazonas.getForca());
@@ -36,7 +108,7 @@ public class Game {
 		 */
 		
 		
-		System.out.println(arqueira_amazonas.getNome());
+//		System.out.println(arqueira_amazonas.getNome());
 		/*
 		 * System.out.println(arqueira_amazona.getVida());
 		 * System.out.println(arqueira_amazona.getForca());
@@ -45,12 +117,12 @@ public class Game {
 		 * System.out.println(arqueira_amazona.getEquipameto());
 		 */
 		
-		int ataque = rainha_amazonas.atacar();
-		arqueira_amazonas.recebeAtaque(ataque);
-		System.out.println(arqueira_amazonas.getNome() + " Possui de Vida Total " + arqueira_amazonas.getVida());
-		ataque = arqueira_amazonas.atacar();
-		rainha_amazonas.recebeAtaque(ataque);
-		System.out.println(rainha_amazonas.getNome() + " Possui de Vida Total " + rainha_amazonas.getVida());
+//		int ataque = rainha_amazonas.atacar();
+//		arqueira_amazonas.recebeAtaque(ataque);
+//		System.out.println(arqueira_amazonas.getNome() + " Possui de Vida Total " + arqueira_amazonas.getVida());
+//		ataque = arqueira_amazonas.atacar();
+//		rainha_amazonas.recebeAtaque(ataque);
+//		System.out.println(rainha_amazonas.getNome() + " Possui de Vida Total " + rainha_amazonas.getVida());
 		
 		/*
 		 * System.out.print("Nome do Jogador 1: "); String nome_jogador1 =
@@ -72,6 +144,41 @@ public class Game {
 		 * //metodo_exibir_escolher_deck }
 		 */
 
+	}
+	
+	private static String[] gerarDeck() {
+		String[] deck = { 
+			"Amazona",
+			"Harpia",
+			"Herói"
+		};
+	    
+	    return deck;
+	}
+	
+	public static void escolherDeck(String primeiro_jogador, String[] deck) {
+		// listando decks
+		System.out.println(primeiro_jogador + ", as opções de deck disponíveis são:\n");
+		for (int i = 0; i < deck.length; i++) {
+			System.out.println((i+1) + " -> " + deck[i]);
+		}		
+		System.out.println("\nDigite o número do deck desejado.");
+		// escolhendo deck desejado
+		int deck_escolhido = scanner.nextInt();
+		System.out.println("Deck escolhido:"+deck_escolhido);
+		
+		
+	}
+	
+	
+	private static int jogarDado(int min, int max) {
+
+		if (min >= max) {
+			throw new IllegalArgumentException("O valor máximo deve ser maior que o mínimo");
+		}
+
+		Random r = new Random();
+		return r.nextInt((max - min) + 1) + min;
 	}
 
 }
