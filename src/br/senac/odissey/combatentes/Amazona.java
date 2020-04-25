@@ -1,28 +1,10 @@
 package br.senac.odissey.combatentes;
 
 
-public abstract class Amazona extends Combatente{
+public abstract class Amazona extends Guerreiro{
 
-	public Amazona() {
-		super("Amazona", 5, 10);
-	}
-	
-	public Amazona(String nome) {
-		super(nome, 5, 10);
-	}
-	
-	@Override
-	public void recebeAtaque(int forca) {
-		if (desviaAtaque()) {
-			System.out.println(this.nome + " desviou do ataque.");
-		} else {
-			super.recebeAtaque(forca);
-		}
-	}
-	
-	
-	private boolean desviaAtaque() {
-		return rand.nextInt(10) == 1;
+	public Amazona(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {
+		super(nome, vida, forca, defesa, velocidade, equipamento);
 	}
 
 }

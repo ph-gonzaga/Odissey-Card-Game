@@ -3,46 +3,102 @@ package br.senac.odissey.combatentes;
 import java.util.Random;
 
 public abstract class Combatente {
-	protected Random rand = new Random();
+	
+	protected String nome;
 	protected int vida;
 	protected int forca;
-	protected String nome;
+	protected int defesa;
+	protected int velocidade;
+	public Random rand = new Random();
 	
-	public Combatente() {
-		this.nome = "teste" ;
-		this.forca = 5 + rand.nextInt(50);
-		this.vida = 50 + rand.nextInt(5);
-	}
-
-
-	public Combatente(String nome, int forcaMinima, int vidaMinima) {
+	public Combatente(String nome, int vida, int forca, int defesa, int velocidade) {
 		this.nome = nome;
-		this.forca = forcaMinima + rand.nextInt(50);
-		this.vida = vidaMinima + rand.nextInt(5);
+		this.vida = 100;
+		this.forca = forca;
+		this.defesa = defesa;
+		this.velocidade = velocidade;
 	}
+	
 	
 	public String getNome() {
 		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	
 	public int getVida() {
 		return vida;
 	}
-	
-	public int ataca() {
-		return (int) (forca * rand.nextInt());
+	public void setVida(int vida) {
+		this.vida = vida;
 	}
 	
-	public void recebeAtaque(int forca, String tipo) {
-		recebeAtaque(forca);
+	public int getForca() {
+		return forca;
+	}
+	public void setForca(int forca) {
+		this.forca = forca;
 	}
 	
-	public void recebeAtaque(int forca) {
-		if (forca > vida) {
+	public int getDefesa() {
+		return defesa;
+	}
+	public void setDefesa(int defesa) {
+		this.defesa = defesa;
+	}
+	
+	public int getVelocidade() {
+		return velocidade;
+	}
+	
+	public void setVelocidade(int velocidade) {
+		this.velocidade = velocidade;
+	}
+	
+	
+	//Metodos Batalha
+	
+	
+
+	public int atacar() {
+		System.out.println(this.nome + " possui força " + forca);
+		System.out.println(this.nome + " possui velocidade " + velocidade);
+		int ataque_total = (forca + rand.nextInt(10));
+		System.out.println(ataque_total);
+		ataque_total = agilidade(ataque_total);
+		System.out.println(this.nome + " ataca com força " + ataque_total);
+		return ataque_total;
+	}
+	
+	public int defender() {
+		int defesa_total = (defesa + rand.nextInt(15));
+		System.out.println(this.nome + " defende com " + defesa_total);
+		return defesa_total;
+	}
+	
+	public int agilidade(int ataque_total) {
+		int velocidade_total = (velocidade + rand.nextInt(10));
+		System.out.println(velocidade_total);
+		if (velocidade_total > ataque_total) {
+			System.out.println("Ataque Critico");
+		}
+		return ataque_total;
+		
+	}
+	
+	public void recebeAtaque(int ataque) {
+		defesa = defender();
+		if (ataque > vida) {
 			vida = 0;
-		} else {
-			vida -= forca;
+		} else if (ataque < defesa) {
+			System.out.println(this.nome + " possui defesa " + defesa + " o ataque foi bloqueado ");
+		}else {
+			ataque -= defesa;
+			System.out.println(this.nome + " recebeu " + ataque + " dano ");
+			vida -= ataque;
 		}
 	}
 
+	
 }
