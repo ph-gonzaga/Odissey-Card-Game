@@ -77,28 +77,32 @@ public abstract class Combatente {
 		return defesa_total;
 	}
 	
-	public int agilidade(int ataque_total) {
+	public int agilidade(int ataque) {
 		int velocidade_total = (velocidade + rand.nextInt(10));
 		System.out.println(velocidade_total);
-		if (velocidade_total > ataque_total) {
+		if (velocidade_total > ataque) {
 			System.out.println("Ataque Critico");
 		}
-		return ataque_total;
+		return ataque;
 		
 	}
 	
+	
 	public void recebeAtaque(int ataque) {
 		defesa = defender();
-		if (ataque > vida) {
-			vida = 0;
-		} else if (ataque < defesa) {
+		if (ataque < defesa) {
 			System.out.println(this.nome + " possui defesa " + defesa + " o ataque foi bloqueado ");
 		}else {
+			if (ataque > vida) {
+				System.out.println(this.nome + " recebeu " + ataque + " dano ");
+				System.out.println(this.nome + " foi derrotado(a)");
+				vida = 0;
+			} else {
 			ataque -= defesa;
 			System.out.println(this.nome + " recebeu " + ataque + " dano ");
 			vida -= ataque;
+			}	
 		}
 	}
-
 	
 }
