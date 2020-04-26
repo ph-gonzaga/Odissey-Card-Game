@@ -5,7 +5,7 @@ import br.senac.odissey.combatentes.Guerreiro;
 public class Perseu extends Guerreiro {
 	
 	public Perseu() {
-		super("Perseu", 50, 5, 6, 10, "Escudo");
+		super("Perseu", 30, 5, 6, 10, "Escudo");
 	}
 
 	public Perseu(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {

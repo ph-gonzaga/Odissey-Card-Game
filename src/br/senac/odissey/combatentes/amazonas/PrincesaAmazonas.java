@@ -6,7 +6,7 @@ import br.senac.odissey.combatentes.Curandeiro;
 public class PrincesaAmazonas extends Amazona implements Curandeiro  {
 	
 	public PrincesaAmazonas() {
-		super("Princesa Amazonas", 100, 5, 10, 6, "Escudo");
+		super("Princesa Amazonas", 30, 5, 10, 6, "Escudo");
 	}
 
 	public PrincesaAmazonas(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {

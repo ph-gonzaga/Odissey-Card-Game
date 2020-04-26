@@ -68,9 +68,9 @@ public abstract class Combatente {
 	}
 	
 	public int ataque() {
-		System.out.println(this.nome);
+		System.out.println(this.nome.toUpperCase());
 		int ataque_total = (forca + rand.nextInt(15));
-		System.out.println("ataque total: " + ataque_total);
+		//System.out.println("Ataque inicial:" + ataque_total);
 		ataque_total = agilidade(ataque_total);
 		return ataque_total;
 	}
@@ -78,7 +78,7 @@ public abstract class Combatente {
 
 	public int atacar() {
 		int ataque_total = ataque();
-		System.out.println(this.nome + " ataca com: " + ataque_total);
+		System.out.println("Ataca com: " + ataque_total);
 		System.out.println("///////----//////");
 		return ataque_total;
 	}
@@ -92,10 +92,10 @@ public abstract class Combatente {
 	
 	public int agilidade(int ataque) {
 		int velocidade_total = (velocidade + rand.nextInt(10));
-		System.out.println("velocidade total: " + velocidade_total);
+		/* System.out.println("velocidade total: " + velocidade_total); */
 		if (velocidade_total > ataque) {
 			ataque += rand.nextInt(6);
-			System.out.println("Ataque Critico");
+			System.out.println("Ataque Critico!");
 		}
 		return ataque;
 	}
@@ -106,12 +106,12 @@ public abstract class Combatente {
 		if (ataque < defesa_total) {
 			System.out.println(this.nome + " possui defesa " + defesa_total + " o ataque foi bloqueado ");
 		}else {
+			ataque -= defesa_total;
 			if (ataque > vida) {
 				System.out.println(this.nome + " recebeu " + ataque + " dano ");
 				System.out.println(this.nome + " foi derrotado(a)");
 				vida = 0;
 			} else {
-			ataque -= defesa_total;
 			System.out.println(this.nome + " recebeu " + ataque + " dano ");
 			vida -= ataque;
 			}	

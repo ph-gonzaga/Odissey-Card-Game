@@ -7,7 +7,7 @@ public class HarpiaFantasma extends Harpia {
 	protected boolean veneno = false;
 	
 	public HarpiaFantasma() {
-		super("Harpia Fantasma", 100, 7, 7, 7);
+		super("Harpia Fantasma", 30, 7, 7, 7);
 	}
 	
 
@@ -22,7 +22,7 @@ public class HarpiaFantasma extends Harpia {
 			 ataque_total = ativarMordidaAcida(ataque_total);
 			 veneno = true ;
 		}
-		System.out.println(this.nome + " ataca com: " + ataque_total);
+		System.out.println("Ataca com: " + ataque_total);
 		System.out.println("///////----//////");
 		return ataque_total;
 	}

@@ -5,7 +5,7 @@ import br.senac.odissey.combatentes.Guerreiro;
 public class Hercules extends Guerreiro {
 	
 	public Hercules() {
-		super("Hercules", 50, 9, 7, 5, "Espada");
+		super("Hercules", 30, 9, 7, 5, "Espada");
 	}
 
 	public Hercules(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {

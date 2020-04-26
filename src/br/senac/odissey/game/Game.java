@@ -8,6 +8,7 @@ import br.senac.odissey.batalha.Batalha;
 import br.senac.odissey.combatentes.*;
 import br.senac.odissey.combatentes.amazonas.*;
 import br.senac.odissey.combatentes.harpias.*;
+import br.senac.odissey.combatentes.herois.*;
 
 import java.util.Random;
 
@@ -22,22 +23,17 @@ public class Game {
 		List<Combatente> inimigo1 = new ArrayList<Combatente>();
 		List<Combatente> inimigo2 = new ArrayList<Combatente>();
 
-		/* inimigo1.add(new RainhaAmazonas()); */
-		inimigo1.add(new ArqueiraAmazonas());
-		inimigo2.add(new HarpiaFantasma());
+		inimigo1.add(new Aquiles());
+		inimigo2.add(new ArqueiraAmazonas());
 		/* inimigo2.add(new HarpiaGelo()); */
 		
         for (Combatente cartaDeck1 : inimigo1) {
         	for (Combatente cartaDeck2 : inimigo2) {
         		 Batalha batalha = new Batalha(cartaDeck1, cartaDeck2); 
-				 Combatente vencedor = batalha.lutar();
-				 System.out.println("Vencedor: " + vencedor.getNome());
+				 String vencedor = batalha.lutar();
+				 System.out.println("Vencedor: " + vencedor);
             }
         }
 				  
-		/* System.out.println("Vencedor: " + vencedor.getNome()); */
-
-
-	   
 	}
 }

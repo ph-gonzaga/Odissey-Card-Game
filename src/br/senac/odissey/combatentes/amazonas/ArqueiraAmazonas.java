@@ -5,7 +5,7 @@ import br.senac.odissey.combatentes.Amazona;
 public class ArqueiraAmazonas extends Amazona {
 	
 	public ArqueiraAmazonas() {
-		super("Arqueira Amazonas", 100, 8, 5, 8, "Arco");
+		super("Arqueira Amazonas", 30, 8, 5, 8, "Arco");
 	}
 	
 	public ArqueiraAmazonas(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {
@@ -16,7 +16,7 @@ public class ArqueiraAmazonas extends Amazona {
 	public int defender() {
 		int defesa_total = (defesa + rand.nextInt(10));
 		System.out.println(this.nome + " defesa: " + defesa_total);
-		if (defesa_total < 11) {
+		if (defesa_total < 9) {
 			int defesa_efeito = ativarFlechaEnvenenada(defesa_total);
 			System.out.println(nome + " Sua defesa aumentou " + defesa_total + " para " + defesa_efeito);
 			defesa_total = defesa_efeito;

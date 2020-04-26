@@ -16,12 +16,9 @@ public class Harpia extends Combatente {
 			efeito = true;
 		if (efeito == true && contador == 1) {
 			ativarFuracaoPenas();
-			super.recebeAtaque(ataque);
-		} 
-		
-		}else {
-			super.recebeAtaque(ataque);
+			} 
 		}
+			super.recebeAtaque(ataque);
 	}
 
 
@@ -36,7 +33,7 @@ public class Harpia extends Combatente {
              velocidade += 1; 
              System.out.println(nome + " teve sua velocidade basica alterada para = "+ velocidade); 
        
-             contador += 1;
+             contador += 3;
 	}
 
 }
