@@ -105,7 +105,7 @@ public abstract class Combatente {
 		int defesa_total = defender();
 		if (ataque < defesa_total) {
 			System.out.println(this.nome + " possui defesa " + defesa_total + " o ataque foi bloqueado ");
-		}else {
+		} else {
 			if (ataque > vida) {
 				System.out.println(this.nome + " recebeu " + ataque + " dano ");
 				System.out.println(this.nome + " foi derrotado(a)");
