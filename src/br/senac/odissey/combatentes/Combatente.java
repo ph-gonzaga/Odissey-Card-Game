@@ -13,7 +13,7 @@ public abstract class Combatente {
 	
 	public Combatente(String nome, int vida, int forca, int defesa, int velocidade) {
 		this.nome = nome;
-		this.vida = 100;
+		this.vida = 30;
 		this.forca = forca;
 		this.defesa = defesa;
 		this.velocidade = velocidade;
@@ -59,46 +59,53 @@ public abstract class Combatente {
 	
 	//Metodos Batalha
 	
-	
-
-	public int atacar() {
-		System.out.println(this.nome + " possui força " + forca);
-		System.out.println(this.nome + " possui velocidade " + velocidade);
-		int ataque_total = (forca + rand.nextInt(10));
-		System.out.println(ataque_total);
+	public int ataque() {
+		System.out.println(this.nome);
+		int ataque_total = (forca + rand.nextInt(15));
+		System.out.println("ataque total: " + ataque_total);
 		ataque_total = agilidade(ataque_total);
-		System.out.println(this.nome + " ataca com força " + ataque_total);
 		return ataque_total;
 	}
 	
+	
+
+	public int atacar() {
+		int ataque_total = ataque();
+		System.out.println(this.nome + " ataca com: " + ataque_total);
+		System.out.println("///////----//////");
+		return ataque_total;
+	}
+	
+	
+	
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(15));
-		System.out.println(this.nome + " defende com " + defesa_total);
+		int defesa_total = (defesa + rand.nextInt(10));
+		System.out.println(this.nome + " defende com: " + defesa_total);
 		return defesa_total;
 	}
 	
 	public int agilidade(int ataque) {
 		int velocidade_total = (velocidade + rand.nextInt(10));
-		System.out.println(velocidade_total);
+		System.out.println("velocidade total: " + velocidade_total);
 		if (velocidade_total > ataque) {
+			ataque += rand.nextInt(6);
 			System.out.println("Ataque Critico");
 		}
 		return ataque;
-		
 	}
 	
 	
 	public void recebeAtaque(int ataque) {
-		defesa = defender();
-		if (ataque < defesa) {
-			System.out.println(this.nome + " possui defesa " + defesa + " o ataque foi bloqueado ");
+		int defesa_total = defender();
+		if (ataque < defesa_total) {
+			System.out.println(this.nome + " possui defesa " + defesa_total + " o ataque foi bloqueado ");
 		}else {
 			if (ataque > vida) {
 				System.out.println(this.nome + " recebeu " + ataque + " dano ");
 				System.out.println(this.nome + " foi derrotado(a)");
 				vida = 0;
 			} else {
-			ataque -= defesa;
+			ataque -= defesa_total;
 			System.out.println(this.nome + " recebeu " + ataque + " dano ");
 			vida -= ataque;
 			}	
