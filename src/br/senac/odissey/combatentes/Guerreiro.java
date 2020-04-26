@@ -28,10 +28,8 @@ public abstract class Guerreiro extends Combatente {
 			ativarEquipamento();
 			super.recebeAtaque(ataque);
 		} 
-		
-		}else {
-			super.recebeAtaque(ataque);
 		}
+			super.recebeAtaque(ataque);
 	}
 
 	

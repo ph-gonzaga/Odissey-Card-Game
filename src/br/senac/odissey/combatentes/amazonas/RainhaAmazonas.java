@@ -5,7 +5,7 @@ import br.senac.odissey.combatentes.Amazona;
 public class RainhaAmazonas extends Amazona {
 
 	public RainhaAmazonas() {
-		super("Rainha Amazonas", 100, 7, 9, 5, "Lança");
+		super("Rainha Amazonas", 30, 7, 9, 5, "Lança");
 	}
 	
 	public RainhaAmazonas(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {
@@ -18,7 +18,7 @@ public class RainhaAmazonas extends Amazona {
 		if (ataque_total < 10) {
 			 ataque_total = ativarCinturaoHipolita(ataque_total);
 		}
-		System.out.println(this.nome + " ataca com: " + ataque_total);
+		System.out.println("Ataca com: " + ataque_total);
 		System.out.println("///////----//////");
 		return ataque_total;
 	}

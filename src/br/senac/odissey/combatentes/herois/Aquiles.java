@@ -5,7 +5,7 @@ import br.senac.odissey.combatentes.Heroi;
 public class Aquiles extends Heroi {
 	
 	public Aquiles() {
-		super("Aquiles", 50, 6, 8, 7, "Lança");
+		super("Aquiles", 30, 6, 8, 7, "Lança");
 	}
 
 	public Aquiles(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {

@@ -5,7 +5,7 @@ import br.senac.odissey.combatentes.Harpia;
 public class HarpiaGelo extends Harpia {
 	
 	public HarpiaGelo() {
-		super("Harpia de Gelo", 100, 5, 6, 10);
+		super("Harpia de Gelo", 30, 5, 6, 10);
 	}
 	
 

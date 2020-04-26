@@ -9,9 +9,12 @@ import br.senac.odissey.combatentes.*;
 import br.senac.odissey.combatentes.amazonas.*;
 import br.senac.odissey.combatentes.harpias.*;
 import br.senac.odissey.combatentes.herois.*;
+<<<<<<< HEAD
 //import br.senac.odissey.combatentes.Harpia;
 //import br.senac.odissey.combatentes.amazonas.ArqueiraAmazonas;
 //import br.senac.odissey.combatentes.amazonas.RainhaAmazonas;
+=======
+>>>>>>> 1b04e0f4febd6c83ce695af1116a2a33d7e4ca49
 
 import java.util.Random;
 
@@ -181,6 +184,7 @@ public class Game {
 //		System.out.println("Vencedor: " + vencedor.getNome());
 	}
 
+<<<<<<< HEAD
 	private static String[] gerarDeck() {
 		String[] deck = { 
 			"Amazona",
@@ -267,6 +271,20 @@ public class Game {
 
 		Random r = new Random();
 		return r.nextInt((max - min) + 1) + min;
+=======
+		inimigo1.add(new Aquiles());
+		inimigo2.add(new ArqueiraAmazonas());
+		/* inimigo2.add(new HarpiaGelo()); */
+		
+        for (Combatente cartaDeck1 : inimigo1) {
+        	for (Combatente cartaDeck2 : inimigo2) {
+        		 Batalha batalha = new Batalha(cartaDeck1, cartaDeck2); 
+				 String vencedor = batalha.lutar();
+				 System.out.println("Vencedor: " + vencedor);
+            }
+        }
+				  
+>>>>>>> 1b04e0f4febd6c83ce695af1116a2a33d7e4ca49
 	}
 
 }

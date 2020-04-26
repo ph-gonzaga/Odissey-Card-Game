@@ -6,7 +6,7 @@ import br.senac.odissey.combatentes.Harpia;
 public class HarpiaPsiquica extends Harpia implements Curandeiro  {
 	
 	public HarpiaPsiquica() {
-		super("Harpia Fantasma", 100, 6, 8, 7);
+		super("Harpia Psiquica", 30, 6, 8, 7);
 	}
 	
 
@@ -24,7 +24,7 @@ public class HarpiaPsiquica extends Harpia implements Curandeiro  {
 		
 		if (ataque > velocidade) {
 			ataque = ativarMaldicaoMistica(ataque);
-			System.out.println(" o ataque do inimigo foi reduzido para " + ataque);	
+			System.out.println("O ataque do inimigo foi reduzido para " + ataque);	
 		}
 		
 		super.recebeAtaque(ataque);
