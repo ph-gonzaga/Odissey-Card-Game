@@ -59,6 +59,14 @@ public abstract class Combatente {
 	
 	//Metodos Batalha
 	
+	public boolean estaMorto() {
+		return this.vida == 0;
+	}
+	
+	public boolean estaVivo() {
+		return this.vida > 0;
+	}
+	
 	public int ataque() {
 		System.out.println(this.nome);
 		int ataque_total = (forca + rand.nextInt(15));
@@ -67,7 +75,6 @@ public abstract class Combatente {
 		return ataque_total;
 	}
 	
-	
 
 	public int atacar() {
 		int ataque_total = ataque();
@@ -75,7 +82,6 @@ public abstract class Combatente {
 		System.out.println("///////----//////");
 		return ataque_total;
 	}
-	
 	
 	
 	public int defender() {
