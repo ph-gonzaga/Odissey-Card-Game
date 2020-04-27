@@ -23,8 +23,7 @@ public class Harpia extends Combatente {
 
 
 	// Metodo exclusivo para todas as Harpias
-	
-	public void ativarFuracaoPenas() {
+	private void ativarFuracaoPenas() {
 		
 		System.out.println(nome + " ativou o efeito especial Furacao de Penas das Harpias!");
 		

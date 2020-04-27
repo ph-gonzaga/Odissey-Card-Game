@@ -25,9 +25,8 @@ public class RainhaAmazonas extends Amazona {
 
 	
 	
-	// Metodo exclusivo para Guerreiro
-	
-	public int ativarCinturaoHipolita(int ataque) {
+	// Metodo exclusivo para Rainha Amazona
+	private int ativarCinturaoHipolita(int ataque) {
 	
 		int ataque_total = ataque + 3;
 		

@@ -40,9 +40,8 @@ public class HarpiaFantasma extends Harpia {
 
 	
 	
-	// Metodo exclusivo para Guerreiro
-	
-	public void ativarVeneno() {
+	// Metodos exclusivos para Harpia Fantasma
+	private void ativarVeneno() {
 		
 		vida -= 1;
 		
@@ -51,7 +50,7 @@ public class HarpiaFantasma extends Harpia {
 		
 	}
 	
-	public int ativarMordidaAcida(int ataque) {
+	private int ativarMordidaAcida(int ataque) {
 	
 		int ataque_total = ataque + 2;
 		

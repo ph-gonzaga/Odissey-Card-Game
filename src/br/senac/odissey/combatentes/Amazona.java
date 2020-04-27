@@ -21,8 +21,7 @@ public abstract class Amazona extends Guerreiro{
 	}
 
 	// Metodo exclusivo para todas Amazonas
-	
-	public int ativarEmboscadaAmazonas(int ataque) {
+	private int ativarEmboscadaAmazonas(int ataque) {
 	
 		System.out.println(nome + " ativou a emboscada da Amazonas!");
 		return ataque = ataque / 2;

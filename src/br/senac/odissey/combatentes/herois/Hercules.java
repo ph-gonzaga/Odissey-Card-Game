@@ -28,8 +28,7 @@ public class Hercules extends Guerreiro {
 	
 	// Metodo exclusivo para Hercules
 
-	
-	public int ativarPunhoDeAco(int ataque) {
+	private int ativarPunhoDeAco(int ataque) {
 	
 		System.out.println(nome + " ativa sua habilidade Punho de Aço!");
 		return ataque += rand.nextInt(6);

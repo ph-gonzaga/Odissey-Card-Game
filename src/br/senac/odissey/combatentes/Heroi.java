@@ -16,8 +16,7 @@ public class Heroi extends Guerreiro {
 	}
 	
 	// Metodo exclusivo para todos os Heroi
-	
-	public void ativarInvestidaFerro() {
+	private void ativarInvestidaFerro() {
 	
 		System.out.println(nome + " ativou a investida de ferro!");
 		velocidade += 1;

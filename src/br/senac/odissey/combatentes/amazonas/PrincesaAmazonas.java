@@ -14,8 +14,6 @@ public class PrincesaAmazonas extends Amazona implements Curandeiro  {
 		
 	}
 
-	// Metodo exclusivo para Princesa Amazonas
-	
 	
 	@Override
 	public void recebeAtaque(int ataque) {

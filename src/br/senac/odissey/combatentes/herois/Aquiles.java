@@ -28,7 +28,7 @@ public class Aquiles extends Heroi {
 	// Metodo exclusivo para Aquiles
 
 	
-	public int ativarPisadaTerremoto(int ataque) {
+	private int ativarPisadaTerremoto(int ataque) {
 	
 		int ataque_total = ataque - 1;
 		vida += 1;

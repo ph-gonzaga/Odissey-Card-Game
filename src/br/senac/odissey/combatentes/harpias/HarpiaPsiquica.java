@@ -31,7 +31,8 @@ public class HarpiaPsiquica extends Harpia implements Curandeiro  {
 	}
 	
 	
-	public int ativarMaldicaoMistica(int ataque) {
+	// Metodo exclusivo para Harpia Psiquica
+	private int ativarMaldicaoMistica(int ataque) {
 		
 		System.out.println(nome + " ativou o efeito Maldição Mistica");
 		return ataque -= 2 ;

@@ -27,7 +27,8 @@ public class Perseu extends Guerreiro {
 	}
 	
 	
-	public int ativarDefesaAntiGorgona(int defesa) {
+	// Metodo exclusivo para Perseu
+	private int ativarDefesaAntiGorgona(int defesa) {
 		
 		System.out.println(nome + " ativa sua habilidade Escudo Anti Gorgonas!");
 		return defesa += rand.nextInt(6);

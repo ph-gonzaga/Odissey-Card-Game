@@ -27,8 +27,8 @@ public class HarpiaGelo extends Harpia {
 		return defesa_total;
 	}
 	
-	
-	public int ativarVentoArtico(int defesa) {
+	// Metodo exclusivo para Harpia de Gelo
+	private int ativarVentoArtico(int defesa) {
 		
 		defesa += 3;
 		

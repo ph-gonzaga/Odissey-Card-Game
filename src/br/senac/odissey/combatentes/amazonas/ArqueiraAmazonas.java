@@ -26,9 +26,8 @@ public class ArqueiraAmazonas extends Amazona {
 	}
 	
 	
-	// Metodo exclusivo para Guerreiro
-	
-	public int ativarFlechaEnvenenada(int defesa_total) {
+	// Metodo exclusivo para Arqueira Amazonas
+	private int ativarFlechaEnvenenada(int defesa_total) {
 	
 		defesa_total += 2;
 		

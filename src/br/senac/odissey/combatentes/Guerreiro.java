@@ -34,8 +34,7 @@ public abstract class Guerreiro extends Combatente {
 
 	
 	// Metodo exclusivo para Guerreiro
-	
-	public void ativarEquipamento() {
+	private void ativarEquipamento() {
 		
 		System.out.println(nome + " ativou o efeito especial dos Guerreiros!");
 		
