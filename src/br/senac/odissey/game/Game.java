@@ -9,12 +9,10 @@ import br.senac.odissey.combatentes.*;
 import br.senac.odissey.combatentes.amazonas.*;
 import br.senac.odissey.combatentes.harpias.*;
 import br.senac.odissey.combatentes.herois.*;
-<<<<<<< HEAD
+
 //import br.senac.odissey.combatentes.Harpia;
 //import br.senac.odissey.combatentes.amazonas.ArqueiraAmazonas;
 //import br.senac.odissey.combatentes.amazonas.RainhaAmazonas;
-=======
->>>>>>> 1b04e0f4febd6c83ce695af1116a2a33d7e4ca49
 
 import java.util.Random;
 
@@ -39,7 +37,9 @@ public class Game {
 		System.out.println("Nome do Jogador 2: ");
 		String nome_jogador2 = scanner.nextLine();
 		
-		System.out.println("\nSejam bem-vindos, " + nome_jogador1 + " e " + nome_jogador2 + ", agora vamos realizar um sorteio para ver quem começa escolhendo o deck!");
+		System.out.println("\nSejam bem-vindos, " + nome_jogador1 + " e " + nome_jogador2 + "!");
+		Thread.sleep(1000);
+		System.out.println("\nVamos realizar um sorteio para ver quem começa escolhendo o deck!");
 		Thread.sleep(1000);
 		
 		// Jogando os dados
@@ -95,14 +95,13 @@ public class Game {
 //		
 		Thread.sleep(1500);
 
+		System.out.println("\nARENA DE BATALHA: TITÃ.");
 		System.out.println("\n"+primeiro_jogador + ", parabéns, vc ganhou. Comece escolhendo o deck.");
 //		
 		// Primeiro jogador escolhendo o deck
 		String[] deck = gerarDeck();
 		
 		String deck_primeiro_jogador = escolherDeck(deck);
-		
-		System.out.println("\n" + primeiro_jogador + ", vc escolheu o deck: " + deck_primeiro_jogador+".");
 		
 		Thread.sleep(1500);
 		
@@ -112,79 +111,63 @@ public class Game {
 		// Segundo jogador escolhendo o deck
 		System.out.println("\n" + segundo_jogador + ", agora é a sua vez.");
 		String deck_segundo_jogador = escolherDeck(deck);
-		System.out.println("\n" + segundo_jogador + ", vc escolheu o deck: " + deck_segundo_jogador+".");
 		
 		ArrayList<Combatente> deck_final_player2 = carregandoCartas(deck_segundo_jogador);
 		
 		System.out.println("\nA batalha começará agora!");
 		Thread.sleep(1500);
 		
-//		for (Combatente temp : deck_final_player1) {
-//            System.out.println(temp);
-//        }
+		int vencedorBatalha = executarBatalha(deck_final_player1, deck_final_player2);
 		
-		executarBatalha(deck_final_player1, deck_final_player2);
-		
+		switch (vencedorBatalha) {
+		case 1:
+			System.out.print("PARABÉNS, " + primeiro_jogador + "! \nVOCE VENCEU!!");		
+			break;
+		case 2:
+			System.out.print("PARABÉNS, " + segundo_jogador + "! \nVOCE VENCEU!!");
+			break;
+		}		
 	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void executarBatalha(ArrayList<Combatente> deck1, ArrayList<Combatente> deck2) throws InterruptedException {
-		for (int i = 0; i < deck1.size(); i++) {
-			for (int ii = 0; ii < deck2.size(); ii++) {
-				Batalha batalha = new Batalha(deck1.get(i), deck2.get(ii)); 
-				Combatente vencedor = batalha.lutar();
-				System.out.println("Vencedor: " + vencedor.getNome());
+	public static int executarBatalha(ArrayList<Combatente> deck1, ArrayList<Combatente> deck2) throws InterruptedException {
+		int qtd_deck1 = deck1.size();
+		int qtd_deck2 = deck2.size();
+		
+		while(qtd_deck1 != 0 || qtd_deck2 != 0) {
+			if(calculaCartasDeck(qtd_deck1) == 3 || calculaCartasDeck(qtd_deck2) == 3) {
+				System.out.println("\n\nBATALHA ENCERRADA\n\n");
+				break;
+			} else {
+				Batalha batalha = new Batalha(deck1.get(calculaCartasDeck(qtd_deck1)), deck2.get(calculaCartasDeck(qtd_deck2))); 
+				int vencedor = batalha.lutar();
+				switch (vencedor) {
+				case 0:
+					qtd_deck1--;
+					qtd_deck2--;
+					break;
+				case 1:
+					qtd_deck2--;
+					break;
+				case 2:
+					qtd_deck1--;
+					break;
+				}
 			}
 		}
-//		Batalha batalha = new Batalha(deck1.get(1), deck2.get(1)); 
-//		Combatente vencedor = batalha.lutar();
-//		System.out.println("Vencedor: " + vencedor.getNome());
+		
+		if(qtd_deck1 == 0) {
+			return 1;
+		} else {
+			return 2;
+		}
 	}
 
-<<<<<<< HEAD
+	private static int calculaCartasDeck(int qtdCartas) {
+		return (qtdCartas-3)*-1;
+	}
+	
 	private static String[] gerarDeck() {
 		String[] deck = { 
 			"Amazona",
@@ -271,20 +254,5 @@ public class Game {
 
 		Random r = new Random();
 		return r.nextInt((max - min) + 1) + min;
-=======
-		inimigo1.add(new Aquiles());
-		inimigo2.add(new ArqueiraAmazonas());
-		/* inimigo2.add(new HarpiaGelo()); */
-		
-        for (Combatente cartaDeck1 : inimigo1) {
-        	for (Combatente cartaDeck2 : inimigo2) {
-        		 Batalha batalha = new Batalha(cartaDeck1, cartaDeck2); 
-				 String vencedor = batalha.lutar();
-				 System.out.println("Vencedor: " + vencedor);
-            }
-        }
-				  
->>>>>>> 1b04e0f4febd6c83ce695af1116a2a33d7e4ca49
 	}
-
 }

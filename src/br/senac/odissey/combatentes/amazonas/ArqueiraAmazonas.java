@@ -16,7 +16,7 @@ public class ArqueiraAmazonas extends Amazona {
 	public int defender() {
 		int defesa_total = (defesa + rand.nextInt(10));
 		System.out.println(this.nome + " defesa: " + defesa_total);
-		if (defesa_total < 9) {
+		if (defesa_total < 11) {
 			int defesa_efeito = ativarFlechaEnvenenada(defesa_total);
 			System.out.println(nome + " Sua defesa aumentou " + defesa_total + " para " + defesa_efeito);
 			defesa_total = defesa_efeito;

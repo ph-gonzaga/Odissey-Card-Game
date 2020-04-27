@@ -17,9 +17,8 @@ public class Batalha {
 		this.inimigo2 = inimigo2;
 	}
 	
-	public String lutar() throws InterruptedException{
+	public int lutar() throws InterruptedException{
 		while(batalhaContinua()) {
-			
 			Thread.sleep(500);
 			statusPersonagem();
 
@@ -49,35 +48,37 @@ public class Batalha {
 		return  inimigo1.estaVivo() && inimigo2.estaVivo();
 	}
 	
-	private String retornaVencedor() {
+	private int retornaVencedor() {
 		if (inimigo1.estaMorto() && inimigo2.estaMorto()) {
-			return "Empate";
-		}else if(inimigo1.estaVivo() == true){
-			return inimigo1.getNome();
-		}else {
-			return inimigo2.getNome();
+			System.out.println("Empate");
+			return 0;
+		} else if(inimigo1.estaVivo() == true){
+			System.out.println("\nVencedor: " + inimigo1.getNome()+"\n");
+			return 1;
+		} else {
+			System.out.println("\nVencedor: " + inimigo2.getNome()+"\n");
+			return 2;
 		}
 	}
 	
 	private void statusPersonagem() {
-		
-		System.out.println("\n");
-		System.out.println("===========///=============");
-		System.out.println("STATUS CARD JOGADOR 1");
-		System.out.println(inimigo1.getNome().toUpperCase());
-		System.out.println("HP: " + inimigo1.getVida());
-		System.out.println("FORÇA: " + inimigo1.getForca());
-		System.out.println("DEFESA: " + inimigo1.getDefesa());
-		System.out.println("VELOCIDADE: " + inimigo1.getVelocidade());
-		System.out.println("===========///=============");
-		System.out.println("STATUS CARD JOGADOR 2");
-		System.out.println(inimigo2.getNome().toUpperCase());
-		System.out.println("HP: " + inimigo2.getVida());
-		System.out.println("FORÇA: " + inimigo2.getForca());
-		System.out.println("DEFESA: " + inimigo2.getDefesa());
-		System.out.println("VELOCIDADE: " + inimigo2.getVelocidade());
-		System.out.println("===========///=============");
-		System.out.println("\n");
+		//System.out.println("\n");
+		//System.out.println("===========///=============");
+		//System.out.println("STATUS CARD JOGADOR 1");
+		//System.out.println(inimigo1.getNome().toUpperCase());
+		//System.out.println("HP: " + inimigo1.getVida());
+		//System.out.println("FORÇA: " + inimigo1.getForca());
+		//System.out.println("DEFESA: " + inimigo1.getDefesa());
+		//System.out.println("VELOCIDADE: " + inimigo1.getVelocidade());
+		//System.out.println("===========///=============");
+		//System.out.println("STATUS CARD JOGADOR 2");
+		//System.out.println(inimigo2.getNome().toUpperCase());
+		//System.out.println("HP: " + inimigo2.getVida());
+		//System.out.println("FORÇA: " + inimigo2.getForca());
+		//System.out.println("DEFESA: " + inimigo2.getDefesa());
+		//System.out.println("VELOCIDADE: " + inimigo2.getVelocidade());
+		//System.out.println("===========///=============");
+		//System.out.println("\n");
 	}
 	
 
