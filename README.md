@@ -1,6 +1,10 @@
 # Odissey-Card-Game
 Projeto POO - Senac
 
+## Integrantes do grupo
+* João Vitor Barbosa Souza
+* Pedro Henrique Gonzaga
+
 ## Pré-Requisitos
 * [Eclipse](https://www.eclipse.org/downloads/) (de preferencia a última versão da IDE);
 * [Git](https://git-scm.com/downloads) (para download deste repositório);
