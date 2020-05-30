@@ -58,6 +58,12 @@ public abstract class Guerreiro extends Combatente {
              velocidade += 2; 
              System.out.println("Sua velocidade aumentou para: " + velocidade); 
              break;
+         case "Punhal":
+             velocidade += 1; 
+             forca += 1;
+             System.out.println("Sua força basica aumentou para: " + forca);
+             System.out.println("Sua velocidade basica aumentou para: " + velocidade); 
+             break;
 		 }
 		 
 		 contador += 1;

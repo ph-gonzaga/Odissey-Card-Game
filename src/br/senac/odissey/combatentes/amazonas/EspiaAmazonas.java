@@ -1,18 +1,18 @@
-package br.senac.odissey.combatentes.herois;
+package br.senac.odissey.combatentes.amazonas;
 
-import br.senac.odissey.combatentes.Guerreiro;
+import br.senac.odissey.combatentes.Amazona;
 
-public class Hercules extends Guerreiro {
+public class EspiaAmazonas extends Amazona {
 	
-	public Hercules() {
-		super("Hercules", 30, 9, 7, 5, "Espada");
+	public EspiaAmazonas() {
+		super("Arqueira Amazonas", 30, 6, 6, 9, "Punhal");
 	}
 
-	public Hercules(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {
+	public EspiaAmazonas(String nome, int vida, int forca, int defesa, int velocidade, String equipamento) {
 		super(nome, vida, forca, defesa, velocidade, equipamento);
+		
 	}
 	
-	@Override
 	public int agilidade(int ataque) {
 		int velocidade_total = (velocidade + rand.nextInt(10));
 		System.out.println("velocidade total: " + velocidade_total);
@@ -20,7 +20,7 @@ public class Hercules extends Guerreiro {
 			ataque += rand.nextInt(6);;
 			System.out.println("Ataque Critico");
 		}else {
-			ataque = ativarPunhoDeAco(ataque);
+			ataque = ativarDistracao(ataque);
 			System.out.println(nome + " Seu ataque foi alterado para " + ataque);
 		}
 		return ataque;
@@ -29,10 +29,11 @@ public class Hercules extends Guerreiro {
 	
 	// Metodo exclusivo para Hercules
 
-	private int ativarPunhoDeAco(int ataque) {
+	private int ativarDistracao(int ataque) {
 	
-		System.out.println(nome + " ativa sua habilidade Punho de Aço!");
+		System.out.println(nome + " ativa sua habilidade Distração");
 		return ataque += rand.nextInt(6);
 		
 	}
+
 }

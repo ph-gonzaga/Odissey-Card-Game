@@ -6,12 +6,12 @@ import br.senac.odissey.combatentes.Harpia;
 public class HarpiaPsiquica extends Harpia implements Curandeiro  {
 	
 	public HarpiaPsiquica() {
-		super("Harpia Psiquica", 30, 6, 8, 7);
+		super("Harpia Psiquica", 30, 6, 8, 7, "Pena de Icarus");
 	}
 	
 
-	public HarpiaPsiquica(String nome, int vida, int forca, int defesa, int velocidade) {
-		super(nome, vida, forca, defesa, velocidade);
+	public HarpiaPsiquica(String nome, int vida, int forca, int defesa, int velocidade, String artefatos) {
+		super(nome, vida, forca, defesa, velocidade, artefatos);
 	}
 
 	@Override

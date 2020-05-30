@@ -17,7 +17,7 @@ public class Perseu extends Guerreiro {
 	public int defender() {
 		int defesa_total = (defesa + rand.nextInt(8));
 		System.out.println(this.nome + " defesa: " + defesa_total);
-		if (defesa_total < 9) {
+		if (defesa_total < 11) {
 			int defesa_efeito = ativarDefesaAntiGorgona(defesa_total);
 			System.out.println(nome + " Sua defesa aumentou " + defesa_total + " para " + defesa_efeito);
 			defesa_total = defesa_efeito;

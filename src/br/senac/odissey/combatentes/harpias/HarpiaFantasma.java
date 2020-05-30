@@ -7,18 +7,18 @@ public class HarpiaFantasma extends Harpia {
 	protected boolean veneno = false;
 	
 	public HarpiaFantasma() {
-		super("Harpia Fantasma", 30, 7, 7, 7);
+		super("Harpia Fantasma", 30, 7, 7, 7, "Pena de Icarus");
 	}
 	
 
-	public HarpiaFantasma(String nome, int vida, int forca, int defesa, int velocidade) {
-		super(nome, vida, forca, defesa, velocidade);
+	public HarpiaFantasma(String nome, int vida, int forca, int defesa, int velocidade, String artefatos) {
+		super(nome, vida, forca, defesa, velocidade, artefatos);
 	}
 	
 	@Override
 	public int atacar() {
 		int ataque_total = ataque();
-		if (ataque_total < 9) {
+		if (ataque_total < 11) {
 			 ataque_total = ativarMordidaAcida(ataque_total);
 			 veneno = true ;
 		}

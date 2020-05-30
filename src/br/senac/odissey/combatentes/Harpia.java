@@ -1,12 +1,12 @@
 package br.senac.odissey.combatentes;
 
-public class Harpia extends Combatente {
+public class Harpia extends SeresMitologicos {
 	
 	boolean efeito = false;
 	int contador = 1;
 
-	public Harpia(String nome, int vida, int forca, int defesa, int velocidade) {
-		super(nome, vida, forca, defesa, velocidade);
+	public Harpia(String nome, int vida, int forca, int defesa, int velocidade, String artefatos) {
+		super(nome, vida, forca, defesa, velocidade, artefatos);
 		
 	}
 	
