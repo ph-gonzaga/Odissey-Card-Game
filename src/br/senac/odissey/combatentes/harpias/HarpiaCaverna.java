@@ -32,7 +32,7 @@ public class HarpiaCaverna extends Harpia {
 	
 		System.out.println(nome + " ativou a investida unha afiada");
 		
-		return ataque += rand.nextInt(6);
+		return ataque += (rand.nextInt(6)+1);
 		 
 		
 	}

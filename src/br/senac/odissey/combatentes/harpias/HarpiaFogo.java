@@ -15,7 +15,7 @@ public class HarpiaFogo extends Harpia {
 
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total < 10) {
 			int defesa_efeito =  ativarPenaFenix(defesa_total);

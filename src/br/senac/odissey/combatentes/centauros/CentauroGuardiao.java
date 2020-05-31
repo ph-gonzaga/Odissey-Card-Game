@@ -30,7 +30,7 @@ public class CentauroGuardiao extends SeresMitologicos {
 				
 		System.out.println(nome + " invocou o Chamado de Guerra");
 				
-		return valor +=  rand.nextInt(5) ;	 
+		return valor +=  (rand.nextInt(5)+1);	 
 				
 	}
 

@@ -3,10 +3,10 @@ package br.senac.odissey.combatentes.ninfas;
 import br.senac.odissey.combatentes.Curandeiro;
 import br.senac.odissey.combatentes.Ninfas;
 
-public class NinfaDasAguasDoce  extends Ninfas implements Curandeiro {
+public class NinfaDasAguasDoce extends Ninfas implements Curandeiro {
 	
 	public NinfaDasAguasDoce() {
-		super("Alseídes - Ninfa das Flores", 30, 6, 9, 6, "Concha das Ondas");
+		super("Naiade - Ninfa das Águas Doces", 30, 6, 9, 6, "Concha das Ondas");
 	}
 	
 	public NinfaDasAguasDoce(String nome, int vida, int forca, int defesa, int velocidade, String artefatos) {

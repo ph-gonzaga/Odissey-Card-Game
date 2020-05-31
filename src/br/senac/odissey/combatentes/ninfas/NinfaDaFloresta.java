@@ -17,7 +17,7 @@ public class NinfaDaFloresta extends Ninfas{
 	
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total == 10 || defesa_total == 8 ) {
 			int defesa_efeito = ativarCamuflagem(defesa_total);

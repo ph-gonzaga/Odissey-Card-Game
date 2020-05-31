@@ -28,7 +28,7 @@ public class LutadoraAmazonas  extends Amazona {
 	
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total == 9 || defesa_total == 12) {
 			int defesa_efeito = ativarExplosaoDeEnergia(defesa_total);
@@ -46,7 +46,7 @@ public class LutadoraAmazonas  extends Amazona {
 			
 			System.out.println(nome + " ativou o bracelete de explosão de energia");
 			
-			return valor +=  rand.nextInt(5) ;	 
+			return valor += (rand.nextInt(5)+1);	 
 			
 		}
 

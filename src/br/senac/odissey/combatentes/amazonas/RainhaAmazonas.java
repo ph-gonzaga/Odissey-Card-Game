@@ -15,7 +15,7 @@ public class RainhaAmazonas extends Amazona {
 	@Override
 	public int atacar() {
 		int ataque_total = ataque();
-		if (ataque_total < 10) {
+		if (ataque_total < 12) {
 			 ataque_total = ativarCinturaoHipolita(ataque_total);
 		}
 		System.out.println("Ataca com: " + ataque_total);

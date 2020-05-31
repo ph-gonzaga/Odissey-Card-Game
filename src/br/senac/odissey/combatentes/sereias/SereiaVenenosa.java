@@ -8,7 +8,7 @@ public class SereiaVenenosa extends Sereia {
 	
 	
 	public SereiaVenenosa() {
-		super("Sereia Electra", 30, 7, 8, 6, "Concha das Ondas");
+		super("Sereia Venenosa", 30, 7, 8, 6, "Concha das Ondas");
 	}
 	
 	public SereiaVenenosa(String nome, int vida, int forca, int defesa, int velocidade, String artefatos) {

@@ -41,7 +41,7 @@ public class CentauroDaCachoeira extends SeresMitologicos {
 		
 		System.out.println(nome + " ativou a habilidade Pulsação de Agua");
 				
-		return valor +=  rand.nextInt(6) ;	 
+		return valor += (rand.nextInt(6)+1);	 
 				
 	}
 	

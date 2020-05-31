@@ -14,12 +14,12 @@ public class Hercules extends Guerreiro {
 	
 	@Override
 	public int agilidade(int ataque) {
-		int velocidade_total = (velocidade + rand.nextInt(10));
+		int velocidade_total = (velocidade + (rand.nextInt(10)+1));
 		System.out.println("velocidade total: " + velocidade_total);
 		if (velocidade_total > ataque) {
-			ataque += rand.nextInt(6);;
+			ataque += (rand.nextInt(6)+1);
 			System.out.println("Ataque Critico");
-		}else {
+		} else {
 			ataque = ativarPunhoDeAco(ataque);
 			System.out.println(nome + " Seu ataque foi alterado para " + ataque);
 		}
@@ -32,7 +32,7 @@ public class Hercules extends Guerreiro {
 	private int ativarPunhoDeAco(int ataque) {
 	
 		System.out.println(nome + " ativa sua habilidade Punho de Aço!");
-		return ataque += rand.nextInt(6);
+		return ataque += (rand.nextInt(6)+1);
 		
 	}
 }

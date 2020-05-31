@@ -16,7 +16,7 @@ public class CentauroDoBosque extends SeresMitologicos {
 	
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total < 10) {
 			int defesa_efeito =  ativarProtecaoDaFloresta(defesa_total);
@@ -32,7 +32,7 @@ public class CentauroDoBosque extends SeresMitologicos {
 	private int ativarProtecaoDaFloresta(int defesa) {
 		
 		System.out.println(nome + " ativou o efeito Protecao da Floresta");
-		return defesa -= rand.nextInt(5);
+		return defesa -= (rand.nextInt(5)+1);
 		
 	}
 

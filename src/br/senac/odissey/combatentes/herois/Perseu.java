@@ -15,7 +15,7 @@ public class Perseu extends Guerreiro {
 	
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(8));
+		int defesa_total = (defesa + (rand.nextInt(8)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total < 11) {
 			int defesa_efeito = ativarDefesaAntiGorgona(defesa_total);
@@ -31,7 +31,7 @@ public class Perseu extends Guerreiro {
 	private int ativarDefesaAntiGorgona(int defesa) {
 		
 		System.out.println(nome + " ativa sua habilidade Escudo Anti Gorgonas!");
-		return defesa += rand.nextInt(6);
+		return defesa += (rand.nextInt(6)+1);
 		
 	}
 

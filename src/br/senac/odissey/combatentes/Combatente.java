@@ -69,7 +69,7 @@ public abstract class Combatente {
 	
 	public int ataque() {
 		System.out.println(this.nome.toUpperCase());
-		int ataque_total = (forca + rand.nextInt(15));
+		int ataque_total = (forca + (rand.nextInt(15)+1));
 		System.out.println("Ataque inicial:" + ataque_total);
 		ataque_total = agilidade(ataque_total);
 		return ataque_total;
@@ -85,16 +85,16 @@ public abstract class Combatente {
 	
 	
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defende com: " + defesa_total);
 		return defesa_total;
 	}
 	
 	public int agilidade(int ataque) {
-		int velocidade_total = (velocidade + rand.nextInt(10));
+		int velocidade_total = (velocidade + (rand.nextInt(10)+1));
 		System.out.println("velocidade total: " + velocidade_total);
 		if (velocidade_total > ataque) {
-			ataque += rand.nextInt(6);
+			ataque += (rand.nextInt(6)+1);
 			System.out.println("Ataque Critico!");
 		}
 		return ataque;

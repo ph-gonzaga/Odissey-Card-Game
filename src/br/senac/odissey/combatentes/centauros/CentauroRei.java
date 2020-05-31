@@ -15,7 +15,7 @@ public class CentauroRei extends SeresMitologicos {
 	
 	@Override
 	public int agilidade(int ataque) {
-		int velocidade_total = (velocidade + rand.nextInt(10));
+		int velocidade_total = (velocidade + (rand.nextInt(10)+1));
 		System.out.println("velocidade total: " + velocidade_total);
 		if (velocidade_total > ataque) {
 			ataque += rand.nextInt(6);;
@@ -33,7 +33,7 @@ public class CentauroRei extends SeresMitologicos {
 	private int ativarTropaCentauro(int ataque) {
 	
 		System.out.println(nome + " invoca sua tropa de Centauros");
-		return ataque += rand.nextInt(6);
+		return ataque += (rand.nextInt(6)+1);
 		
 	}
 

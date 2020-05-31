@@ -14,7 +14,7 @@ public class ArqueiraAmazonas extends Amazona {
 	
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total < 11) {
 			int defesa_efeito = ativarFlechaEnvenenada(defesa_total);
@@ -29,7 +29,7 @@ public class ArqueiraAmazonas extends Amazona {
 	// Metodo exclusivo para Arqueira Amazonas
 	private int ativarFlechaEnvenenada(int defesa_total) {
 	
-		defesa_total += 2;
+		defesa_total += 3;
 		
 		System.out.println(nome + " disparou uma flexa envenenada");
 		

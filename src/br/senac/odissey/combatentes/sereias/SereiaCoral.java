@@ -27,7 +27,7 @@ public class SereiaCoral extends Sereia {
 	// Metodo exclusivo para Sereia Coral
 	private int ativarCancaoDaSereia(int ataque) {
 		
-		int ataque_total = ataque + rand.nextInt(5);
+		int ataque_total = ataque + (rand.nextInt(5)+1);
 		
 		System.out.println(nome + " ativou a canção da sereia");
 		System.out.println(nome + " teve o ataque alterado para " + ataque_total);

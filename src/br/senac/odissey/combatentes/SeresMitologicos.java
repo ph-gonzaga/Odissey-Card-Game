@@ -24,10 +24,10 @@ public class SeresMitologicos extends Combatente {
 	public void recebeAtaque(int ataque) {
 		if (vida == 10 || vida == 15 || vida == 20) {
 			efeito = true;
-		if (efeito == true && contador == 1) {
-			ativarJoia();
-			super.recebeAtaque(ataque);
-		} 
+			if (efeito == true && contador == 1) {
+				ativarJoia();
+				super.recebeAtaque(ataque);
+			} 
 		}
 			super.recebeAtaque(ataque);
 	}

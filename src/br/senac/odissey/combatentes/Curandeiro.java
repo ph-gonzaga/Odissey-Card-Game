@@ -14,7 +14,7 @@ public interface Curandeiro {
 	
 	default int curaOceanica() {
 		
-		return num.nextInt(6);
+		return (num.nextInt(6)+1);
 			 
 	}
 

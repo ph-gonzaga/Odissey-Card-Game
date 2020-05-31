@@ -18,11 +18,13 @@ public class NinfasDaTerra extends Ninfas{
 	public void recebeAtaque(int ataque) {
 		
 		if (ataque > velocidade) {
-			ataque = ativarSementeSagrada(ataque);
-			System.out.println("O ataque do inimigo foi reduzido para " + ataque);	
+			int novo_ataque = ativarSementeSagrada(ataque);
+			System.out.println("O ataque do inimigo foi reduzido para " + novo_ataque);	
+			
+			super.recebeAtaque(novo_ataque);
+		} else {
+			super.recebeAtaque(ataque);
 		}
-		
-		super.recebeAtaque(ataque);
 	}
 	
 	
@@ -30,7 +32,7 @@ public class NinfasDaTerra extends Ninfas{
 	private int ativarSementeSagrada(int ataque) {
 		
 		System.out.println(nome + " ativou o efeito Semente Sagrada");
-		return ataque -= rand.nextInt(5);
+		return ataque -= (rand.nextInt(5)+1);
 		
 	}
 	

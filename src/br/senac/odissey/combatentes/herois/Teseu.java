@@ -31,7 +31,7 @@ public class Teseu extends Heroi {
 	
 		System.out.println(nome + " ativou a investida de ferro");
 		
-		return ataque += rand.nextInt(6);
+		return ataque += (rand.nextInt(6)+1);
 		
 	}
 

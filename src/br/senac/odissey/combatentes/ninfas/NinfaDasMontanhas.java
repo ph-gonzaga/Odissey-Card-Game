@@ -28,7 +28,7 @@ public class NinfaDasMontanhas extends Ninfas {
 	// Metodo exclusivo para Ninfa da Montanha
 	private int ativarElementoSurpresa(int ataque) {
 		
-		int ataque_total = ataque + rand.nextInt(5);
+		int ataque_total = ataque + (rand.nextInt(5)+1);
 		
 		System.out.println(nome + " ativou o elemento surpresa");
 		System.out.println(nome + " teve o ataque alterado para " + ataque_total);

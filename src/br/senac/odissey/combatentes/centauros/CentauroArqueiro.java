@@ -17,9 +17,10 @@ public class CentauroArqueiro extends SeresMitologicos {
 	@Override
 	public void recebeAtaque(int ataque) {
 		if (vida <= 10) {
-			ataque = ativarFlechaParalisante(ataque);
-			System.out.println("O ataque do inimigo foi reduzido para " + ataque);	
-			super.recebeAtaque(ataque);
+			int novo_ataque = ativarFlechaParalisante(ataque);
+			System.out.println("O ataque do inimigo foi reduzido para " + novo_ataque);	
+			
+			super.recebeAtaque(novo_ataque);
 		} else {
 			super.recebeAtaque(ataque);
 		}
@@ -30,7 +31,7 @@ public class CentauroArqueiro extends SeresMitologicos {
 	private int ativarFlechaParalisante(int ataque) {
 			
 		System.out.println(nome + " ativou a Flecha Paralisante");
-		return ataque -= rand.nextInt(5);
+		return ataque -= (rand.nextInt(5)+1);
 			
 		}
 

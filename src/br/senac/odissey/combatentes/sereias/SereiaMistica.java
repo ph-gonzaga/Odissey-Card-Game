@@ -15,7 +15,7 @@ public class SereiaMistica extends Sereia {
 
 	@Override
 	public int defender() {
-		int defesa_total = (defesa + rand.nextInt(10));
+		int defesa_total = (defesa + (rand.nextInt(10)+1));
 		System.out.println(this.nome + " defesa: " + defesa_total);
 		if (defesa_total == 10 || defesa_total == 13 || defesa_total == 15) {
 			int defesa_efeito =  ativarPetrificar(defesa_total);
@@ -30,6 +30,6 @@ public class SereiaMistica extends Sereia {
 	private int ativarPetrificar(int defesa) {
 		
 		System.out.println(nome + " ativou o efeito petrificação");
-		return defesa += rand.nextInt(5);
+		return defesa += (rand.nextInt(5)+1);
 	}
 }

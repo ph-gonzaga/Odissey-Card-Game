@@ -14,10 +14,10 @@ public class EspiaAmazonas extends Amazona {
 	}
 	
 	public int agilidade(int ataque) {
-		int velocidade_total = (velocidade + rand.nextInt(10));
+		int velocidade_total = (velocidade + (rand.nextInt(10)+1));
 		System.out.println("velocidade total: " + velocidade_total);
 		if (velocidade_total > ataque) {
-			ataque += rand.nextInt(6);;
+			ataque += (rand.nextInt(6)+1);
 			System.out.println("Ataque Critico");
 		}else {
 			ataque = ativarDistracao(ataque);
@@ -32,7 +32,7 @@ public class EspiaAmazonas extends Amazona {
 	private int ativarDistracao(int ataque) {
 	
 		System.out.println(nome + " ativa sua habilidade Distração");
-		return ataque += rand.nextInt(6);
+		return ataque += (rand.nextInt(6)+1);
 		
 	}
 

@@ -16,11 +16,14 @@ public class Odisseu extends Guerreiro {
 	public void recebeAtaque(int ataque) {
 		
 		if (ataque > velocidade) {
-			ataque = ativarCavaloDeTroia(ataque);
-			System.out.println("O ataque do inimigo foi reduzido para " + ataque);	
+			int novo_ataque = ativarCavaloDeTroia(ataque);
+			System.out.println("O ataque do inimigo foi reduzido para " + novo_ataque);
+			
+			super.recebeAtaque(novo_ataque);
+		} else {			
+			super.recebeAtaque(ataque);
 		}
 		
-		super.recebeAtaque(ataque);
 	}
 	
 	
@@ -28,7 +31,8 @@ public class Odisseu extends Guerreiro {
 	private int ativarCavaloDeTroia(int ataque) {
 		
 		System.out.println(nome + " ativou o efeito Cavalo de Troia");
-		return ataque -= rand.nextInt(5) ;
+		return ataque -= (rand.nextInt(3)+1);
+		
 		
 	}
 	
